@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
+    <title>Generate Form</title>
+</head>
+
+<style>
+
+    body{
+        background-color: #8EC5FC;
+        background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+        font-family: 'Inter', sans-serif;
+        
+    }
+    
+    .main-container{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .main-container>h3{
+        color:#fff;
+    }
+
+    form{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    form>input{
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        width:80%;
+    }
+</style>
+<body>
+    <div class="main-container">
+        <h3>Enter the details</h3>
+        <form method="POST" action="{{ url_for('generate_pdf') }}">
+            <input type="text" name="Name" placeholder="Name" required>
+            <input type="email" name="E-Mail" placeholder="Email" required>
+            <input type="tel" id="mobNum" name="Mobile Number" placeholder="Phone" required>
+            <div class="address-container">
+                <input type="text" name="Address Line 1" placeholder="Address Line 1" required>
+                <input type="text" name="Address Line 2" placeholder="Address Line 2">
+                <input type="text" name="City" placeholder="City" required>
+                <input type="text" name="State" placeholder="State" required>
+                <input type="tel" id="pinCode" name="Pincode" placeholder="Pincode" required>
+            </div>
+            <input type="text" name="Nearest Police Station" placeholder="Nearest Police Station" required>
+            <input type="tel" id="aadharNum" name="Aadhar Number" placeholder="Aadhar Number" required>
+            <input type="text" name="Type of Crime" placeholder="Type of Crime" required>
+            <textarea name="Description" placeholder="Description" rows=10 cols=40>
+    
+            </textarea>
+            <button type="submit">Generate PDF</button>
+        </form>
+    </div>
+
+    <script>
+        const pinCode = document.getElementById('pinCode');
+        pinCode.addEventListener('input', (e) => {
+            if (pinCode.value.length > 6) {
+                pinCode.value = pinCode.value.slice(0, 6);
+            }
+        })
+
+        const aadharNum = document.getElementById('aadharNum');
+        aadharNum.addEventListener('input', (e) => {
+            if (aadharNum.value.length > 12) {
+                aadharNum.value = aadharNum.value.slice(0, 12);
+            }
+        })
+
+        const mobNum = document.getElementById('mobNum');
+        mobNum.addEventListener('input', (e) => {
+            if (mobNum.value.length > 10) {
+                mobNum.value = mobNum.value.slice(0, 10);
+            }
+        })
+    </script>
+</body>
+</html>

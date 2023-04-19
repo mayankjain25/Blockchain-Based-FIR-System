@@ -11,6 +11,9 @@ blockchain = Blockchain()
 #peers list
 peers = []
 
+
+
+
 @app.route("/new_transaction", methods=["POST"])
 # new transaction added to the block. When user selects to submit new request
 def new_transaction():

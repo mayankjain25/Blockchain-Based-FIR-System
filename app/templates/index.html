@@ -127,35 +127,74 @@
     height: 4.2rem;
   }
 </style>
-<div class="container-fluid">
-  <div class="row" style="padding-top: 10px">
-    <div class="col-sm-4" style="">
-      <h2 class="text-center alert alert-primary">Upload a File</h2>
-      <form action="/submit" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-          <label>User Name:</label>
-          <input
-            type="text"
-            class="form-control"
-            name="user"
-            placeholder="Enter Your Name"
-          />
-        </div>
 
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Upload a File:</label>
-          <input
-            type="file"
-            id="fileUpld"
-            name="v_file"
-            accept=".*"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary mb-2">Upload</button>
-      </form>
+
+
+
+<div>
+  <h2>Upload a file</h2>
+  <form action="/submit" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label>User Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="user"
+        placeholder="Enter Your Name"
+      />
     </div>
 
-    <div class="col-sm-7">
+    
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Upload a File:</label>
+      <input
+        type="file"
+        id="fileUpld"
+        name="v_file"
+        accept=".*"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Upload</button>
+  </form>
+</div>
+
+<!-- <div class="container-fluid"> -->
+
+  <!-- <div class="row" style="padding-top: 10px">
+    <div class="" >
+
+
+
+      
+        
+        <h2 class="text-center alert alert-primary">Upload a File</h2>
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label>User Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="user"
+              placeholder="Enter Your Name"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Upload a File:</label>
+            <input
+              type="file"
+              id="fileUpld"
+              name="v_file"
+              accept=".*"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary mb-2">Upload</button>
+        </form>
+      
+    </div> -->
+
+    <!-- <div class="col-sm-7">
       <h2 class="text-center alert alert-primary">Uploaded Files</h2>
       {% for post in request_tx %}
       <div class="post_box">
@@ -182,10 +221,11 @@
         </div>
       </div>
       {% endfor %}
-    </div>
+    </div> -->
 
     <div class="col-sm-1"></div>
-  </div>
+    <script type="text/javascript" src="https://form.jotform.com/jsform/231085097533053"></script>
+  <!-- </div> -->
 </div>
 
 {% endblock %}

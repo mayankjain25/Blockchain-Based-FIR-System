@@ -1,10 +1,12 @@
 import json
 import os
 import requests
-from flask import render_template, redirect, request,send_file
+from flask import render_template, redirect, request,send_file, make_response
 from werkzeug.utils import secure_filename
 from app import app
 from timeit import default_timer as timer
+import pdfkit
+
 
 # Stores all the post transaction in the node
 request_tx = []
@@ -34,10 +36,47 @@ def get_tx_req():
 
 
 # Loads and runs the home page
+@app.route('/generate_pdf', methods=['POST'])
+def generate_pdf():
+    # Get the form data
+    form_data = request.form
+    print(form_data)
+
+    # Create the HTML content for the PDF
+    html = '<html><head><title>Form Data</title></head><body>'
+    for key, value in form_data.items():
+        html += '<p><strong>{}</strong>: {}</p>'.format(key, value)
+    html += '</body></html>'
+
+    # Create a PDF document from the HTML content
+    pdf = pdfkit.from_string(html, False)
+
+    # Return the PDF as a response
+    response = make_response(pdf)
+    response.headers['Content-Type'] = 'application/pdf'
+    response.headers['Content-Disposition'] = 'attachment; filename=form_data.pdf'
+    return response
+
+
+@app.route('/form')
+def form():
+    return render_template('form.html')
+
+
+@app.route("/home")
+def home():
+    return render_template('landing.html')
+
+
 @app.route("/")
 def index():
     get_tx_req()
     return render_template("index.html",title="FileStorage",subtitle = "A Decentralized Network for File Storage/Sharing",node_address = ADDR,request_tx = request_tx)
+
+
+@app.route("/files")
+def files():
+    return render_template("files.html",title="Files",subtitle = "A Decentralized Network for File Storage/Sharing",node_address = ADDR,request_tx = request_tx)
 
 
 @app.route("/submit", methods=["POST"])
