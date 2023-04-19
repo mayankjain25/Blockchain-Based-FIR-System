@@ -17,9 +17,9 @@
 We developed a web-based application for decentralized file storing using blockchain. In this application any user can upload as many files(one at a time) as he/she likes. All other peers and the user himself can download and access those file in their system. File can be of any type and any size. Refer to project demo link to see the detailed explanation. <br />
 We are using randomly generated nonce in proof of work concept to acheive the required difficulty (diff = 3). Once peer uploads the file, the file is stored in a block including username, filesize and file data. These block gets appended to the current blockchain, which makes it impossible to edit or delete the file/block.<br /> 
 The reason to implement file storing using blockchain is its abilitiy to avoid any modification or deletion. No one can delete or corrupt our files that are stored.
-
+<!-- 
 <h2> Project Demo </h2>
-<h3> Youtube Demo Link : https://youtu.be/Z6JiYkk8Qt8 </h3>
+<h3> Youtube Demo Link : https://youtu.be/Z6JiYkk8Qt8 </h3> -->
 
 <h2>Importance of Blockchain:</h2>
 
@@ -109,8 +109,11 @@ Here, issues with On-chain blockchain can be solved by using off-chain blockchai
 
 <h2> Authors </h2>
 
-1. Name: Bhautik Sojitra
-Student Id: 7900140
+1. Name: Mayank Jain
+Roll: 2006553
 
-2. Name: Kabir Bhakta
-Student Id: 7900098
+2. Name: Aradhya Kumar
+Roll: 2006542
+
+3. Parth Maheshwari
+   Roll: 2006556
