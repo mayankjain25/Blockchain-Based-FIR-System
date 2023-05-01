@@ -126,9 +126,23 @@
       outline: none;
       height: 4.2rem;
     }
+
+    .main-container{
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    footer{
+      position: absolute;
+      bottom:5%;
+      left: 50%;
+      transform:translate(-50%);
+    }
   </style>
 
-<div class="col-sm-7">
+<div class="col-sm-7 main-container">
     <h2 class="text-center alert alert-primary">Uploaded Files</h2>
     {% for post in request_tx %}
     <div class="post_box">
@@ -156,5 +170,7 @@
     </div>
     {% endfor %}
   </div>
+
+  
 
 {% endblock %}

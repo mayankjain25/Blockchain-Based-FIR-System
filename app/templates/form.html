@@ -47,6 +47,25 @@
         border-radius: 5px;
         width:80%;
     }
+
+    button{
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        /* width:80%; */
+        background-color: #fff;
+        color: #000;
+        font-weight: 800;
+        cursor: pointer;
+    }
+
+    footer{
+      position: absolute;
+      bottom:5%;
+      left: 50%;
+      transform:translate(-50%);
+    }
 </style>
 <body>
     <div class="main-container">
@@ -64,12 +83,13 @@
             </div>
             <input type="text" name="Nearest Police Station" placeholder="Nearest Police Station" required>
             <input type="tel" id="aadharNum" name="Aadhar Number" placeholder="Aadhar Number" required>
-            <input type="text" name="Type of Crime" placeholder="Type of Crime" required>
+            <input type="text" name="Type of Crime" placeholder="Type of Crime" required autocomplete="off">
             <textarea name="Description" placeholder="Description" rows=10 cols=40>
     
             </textarea>
             <button type="submit">Generate PDF</button>
         </form>
+        <a href="/">Home</a>
     </div>
 
     <script>
@@ -94,5 +114,12 @@
             }
         })
     </script>
+
+<!-- <footer>
+    <h4><b>Developed by:</b></h4>
+    <p>Mayank Jain  |  Aradhya Kumar    |   Parth Maheshwari</p>
+    
+
+  </footer> -->
 </body>
 </html>

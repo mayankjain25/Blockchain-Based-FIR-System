@@ -63,20 +63,21 @@ def form():
     return render_template('form.html')
 
 
-@app.route("/home")
+@app.route("/")
 def home():
     return render_template('landing.html')
 
 
-@app.route("/")
+@app.route("/home")
 def index():
     get_tx_req()
     return render_template("index.html",title="FileStorage",subtitle = "A Decentralized Network for File Storage/Sharing",node_address = ADDR,request_tx = request_tx)
 
 
 @app.route("/files")
-def files():
-    return render_template("files.html",title="Files",subtitle = "A Decentralized Network for File Storage/Sharing",node_address = ADDR,request_tx = request_tx)
+def showFiles():
+    return render_template('files.html', node_address = ADDR,request_tx = request_tx)
+
 
 
 @app.route("/submit", methods=["POST"])
@@ -105,7 +106,7 @@ def submit():
     requests.post(address, json=post_object)
     end = timer()
     print(end - start)
-    return redirect("/")
+    return redirect("/home")
 
 #creates a download link for the file
 @app.route("/submit/<string:variable>",methods = ["GET"])

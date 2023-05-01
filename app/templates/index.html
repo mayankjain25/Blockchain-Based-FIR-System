@@ -126,14 +126,33 @@
     outline: none;
     height: 4.2rem;
   }
+
+  .main-container{
+    /* suggest css to bring this container to center:  */
+
+    margin: 0 auto;
+    width: 50%;
+    padding: 10px;
+
+  }
+
+  footer{
+      position: absolute;
+      bottom:5%;
+      left: 50%;
+      transform:translate(-50%);
+    }
+
+
+
 </style>
 
 
 
 
-<div>
+<div class="main-container">
   <h2>Upload a file</h2>
-  <form action="/submit" method="POST" enctype="multipart/form-data">
+  <form action="/submit" method=POST enctype="multipart/form-data">
     <div class="form-group">
       <label>User Name:</label>
       <input
@@ -143,9 +162,6 @@
         placeholder="Enter Your Name"
       />
     </div>
-
-    
-
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Upload a File:</label>
       <input
@@ -159,15 +175,15 @@
   </form>
 </div>
 
-<!-- <div class="container-fluid"> -->
+<div class="container-fluid"> 
 
-  <!-- <div class="row" style="padding-top: 10px">
-    <div class="" >
+  <!--  <div class="row" style="padding-top: 10px">
+    <div class="" > -->
 
 
 
       
-        
+<!--         
         <h2 class="text-center alert alert-primary">Upload a File</h2>
         <form action="/submit" method="POST" enctype="multipart/form-data">
           <div class="form-group">
@@ -179,8 +195,8 @@
               placeholder="Enter Your Name"
             />
           </div>
-  
-          <div class="form-group">
+   -->
+          <!-- <div class="form-group">
             <label for="exampleFormControlTextarea1">Upload a File:</label>
             <input
               type="file"
@@ -188,13 +204,13 @@
               name="v_file"
               accept=".*"
             />
-          </div>
-          <button type="submit" class="btn btn-primary mb-2">Upload</button>
-        </form>
+          </div> -->
+          <!-- <button type="submit" class="btn btn-primary mb-2">Upload</button> -->
+        <!-- </form> -->
       
-    </div> -->
+    </div> 
 
-    <!-- <div class="col-sm-7">
+    <!-- <!-- <div class="col-sm-7">
       <h2 class="text-center alert alert-primary">Uploaded Files</h2>
       {% for post in request_tx %}
       <div class="post_box">
@@ -223,9 +239,16 @@
       {% endfor %}
     </div> -->
 
-    <div class="col-sm-1"></div>
-    <script type="text/javascript" src="https://form.jotform.com/jsform/231085097533053"></script>
+    <!-- <div class="col-sm-1"></div> -->
+    <!-- <script type="text/javascript" src="https://form.jotform.com/jsform/231085097533053"></script> -->
   <!-- </div> -->
 </div>
+
+<footer>
+  <h4><b>Developed by:</b></h4>
+  <p>Mayank Jain  |  Aradhya Kumar    |   Parth Maheshwari</p>
+  
+
+</footer>
 
 {% endblock %}

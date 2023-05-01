@@ -47,7 +47,7 @@ def mine_uncofirmed_transactions():
     if result:
         return "Block #{0} mined successfully.".format(result)
     else:
-        return "No pending transactions to mine."
+        return '<h2>No pending transactions to mine.</h2><a href="https://localhost:9000/"><button>Go Home</button></a>'
     
 
 
